@@ -7,6 +7,7 @@ Hello and welcome to our GitHub repository!
 ### Monitoring service
 
 We use a combination of **PHP** and **JavaScript** to create our monitoring service, which is responsible for keeping track of the health of our application. We also use **Chart.js** to display metrics in an easily understandable format.
+Our service provides real-time monitoring of social networks for any topics of your choosing. Whether it's political campaigns, trending hashtags, or breaking news stories, if fakes are found, you also receive on-screen notifications from our monitoring service, which makes it even better and more efficient to use.
 ![Alt Text](https://i.ibb.co/5GZnW8v/monitoring.gif)
 ### Fake detection
 
