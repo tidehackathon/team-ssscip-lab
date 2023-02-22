@@ -62,7 +62,7 @@ Our system includes a feature for detecting fake news and information. This help
 ### ElasticSearch and Kibana
 
 We use **ElasticSearch** and **Kibana** for data storage and visualization, respectively. ElasticSearch allows us to efficiently index and search through large amounts of data, while Kibana provides us with a user-friendly interface for exploring and analyzing our data.
-
+![Screen from Kibana](https://i.ibb.co/5xfRj4P/kibana.gif)
 ### Tweet aggregation
 
 Our system includes a feature for aggregating tweets related to a particular topic or keyword. This allows us to provide our users with a real-time feed of relevant tweets.
