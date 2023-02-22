@@ -7,7 +7,6 @@ Hello and welcome to our GitHub repository!
 ### Monitoring service
 
 We use a combination of **PHP** and **JavaScript** to create our monitoring service, which is responsible for keeping track of the health of our application. We also use **Chart.js** to display metrics in an easily understandable format.
-Our service provides real-time monitoring of social networks for any topics of your choosing. Whether it's political campaigns, trending hashtags, or breaking news stories, if fakes are found, you also receive on-screen notifications from our monitoring service, which makes it even better and more efficient to use.
 ![Alt Text](https://i.ibb.co/5GZnW8v/monitoring.gif)
 ### Fake detection
 
@@ -63,7 +62,7 @@ Our system includes a feature for detecting fake news and information. This help
 ### ElasticSearch and Kibana
 
 We use **ElasticSearch** and **Kibana** for data storage and visualization, respectively. ElasticSearch allows us to efficiently index and search through large amounts of data, while Kibana provides us with a user-friendly interface for exploring and analyzing our data.
-![Screen from Kibana](https://i.ibb.co/5xfRj4P/kibana.gif)
+
 ### Tweet aggregation
 
 Our system includes a feature for aggregating tweets related to a particular topic or keyword. This allows us to provide our users with a real-time feed of relevant tweets.
@@ -80,8 +79,8 @@ We've put a lot of effort into making this application easy to use and understan
 
 
 # RUN PYTHON
-1)Install the required packages:
-
+## Install the required packages:
+```
 Tweepy: pip install tweepy
 Textstat: pip install textstat
 NLTK: pip install nltk
@@ -91,19 +90,24 @@ TensorFlow: pip install tensorflow
 TensorFlow Text: pip install tensorflow-text
 Spacy: pip install spacy
 Requests: pip install requests
-
-2)Download the necessary NLTK data by running the following code:
-
+```
+## Download the necessary NLTK data by running the following code:
+```
    import nltk
    nltk.download('averaged_perceptron_tagger')
    nltk.download('cmudict')
    nltk.download('wordnet')
    nltk.download('vader_lexicon')
+```
+## Download the BERT fake news detection model from this link:
 
-3)Download the BERT fake news detection model from this link: https://drive.google.com/file/d/1hM9X6dqjtVL0aBBUQ2yU0myzA2h8NlWT/view?usp=sharing. Extract the contents of the zip file to a folder named bert_fake_detector.
+```
+https://drive.google.com/file/d/1hM9X6dqjtVL0aBBUQ2yU0myzA2h8NlWT/view?usp=sharing.
+```
+Extract the contents of the zip file to a folder named bert_fake_detector.
 
-4)Create a file named params.json and include the following content:
-
+## Create a file named params.json and include the following content:
+```
 {
   "es_url": "<Elasticsearch URL>",
   "index_name": "<Elasticsearch index name>",
@@ -113,22 +117,27 @@ Requests: pip install requests
   "access_token_secret": "<Twitter API access token secret>",
   "corenlp_url": "<Stanford CoreNLP URL>"
 }
+```
+Replace the placeholders with the appropriate values. You can get the Twitter API credentials by creating a developer account at https://developer.twitter.com/en/apps. 
+You can download Stanford CoreNLP from this link: 
+https://stanfordnlp.github.io/CoreNLP/download.html.
 
-Replace the placeholders with the appropriate values. You can get the Twitter API credentials by creating a developer account at https://developer.twitter.com/en/apps. You can download Stanford CoreNLP from this link: https://stanfordnlp.github.io/CoreNLP/download.html.
-
-5)Update the script with the following modifications:
+## Update the script with the following modifications:
 
 Import the tensorflow and tensorflow_text packages at the beginning of the script.
 Replace the line from textstat import textstat with from textstat import textstat as ts.
 Add the following code after the import nltk statement:
+```
 from nltk import download
 download('stopwords')
 download('punkt')
+```
 Replace the line SIA = SentimentIntensityAnalyzer() with SIA = SentimentIntensityAnalyzer().polarity_scores.
 Add the following code after the import spacy statement:
+```
 nlp = spacy.load('en_core_web_sm')
 sb = SafeBrowsing('<Google Safe Browsing API key>')
-
+```
 Replace <Google Safe Browsing API key> with your own API key, which you can get from the Google Cloud Console.
 
-6)Run the script!
+## Run the script!
