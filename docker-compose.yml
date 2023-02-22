@@ -1,0 +1,41 @@
+version: '3'
+services:
+  nifi:
+    image: apache/nifi:latest
+    ports:
+      - "8080:8080"
+    environment:
+      NIFI_WEB_HTTP_PORT: 8080
+  corenlp:
+    image: isslab/corenlp:2018-10-05
+    ports:
+      - "9000:9000"
+  kafka:
+    image: bitnami/kafka:latest
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    ports:
+      - "2181:2181"
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+
+  elasticsearch:
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+    image: elasticsearch:6.8.2
+  kibana:
+    ports:
+      - "5601:5601"
+    image: kibana:6.8.2
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
