@@ -78,7 +78,7 @@ We've put a lot of effort into making this application easy to use and understan
 
 
 
-#Run PYTHON 
+# RUN PYTHON
 1)Install the required packages:
 
 Tweepy: pip install tweepy
