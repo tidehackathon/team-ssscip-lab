@@ -141,3 +141,9 @@ sb = SafeBrowsing('<Google Safe Browsing API key>')
 Replace <Google Safe Browsing API key> with your own API key, which you can get from the Google Cloud Console.
 
 ## Run the script!
+    
+# Description of the PYTHON API
+    
+    This script uses the Tweepy library to search for tweets on Twitter based on a search query, and analyzes the sentiment, complexity, informality, and other attributes of each tweet. The script then sends the analyzed data to an ElasticSearch server for storage.
+    The script uses several libraries, including datetime, requests, tweepy, time, textstat, re, wordnet, nltk, textblob, cmudict, TfidfVectorizer, spacy, SentimentIntensityAnalyzer, pysafebrowsing, json, tensorflow, and tensorflow_text.
+    The main part of the script iterates through each tweet returned by the Twitter search, and extracts the text, screen name, and other relevant information from the tweet. It then calculates various metrics for the tweet, including sentiment score, complexity, informality, and more. Finally, it sends the analyzed data to an ElasticSearch server for storage.
