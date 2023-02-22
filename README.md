@@ -86,3 +86,5 @@ We've put a lot of effort into making this application easy to use and understan
 ---
 
 ##### Install Python Api - [pythonapi.md]( pythonapi.md)
+#### Install Kibana,ElastickSearch,Apache-Nifi,CoreNLP,Zookeeper
+    docker-compose up
