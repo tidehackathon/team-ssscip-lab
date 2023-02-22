@@ -18,7 +18,8 @@ Our system includes a feature for detecting fake news and information. This help
 #This Python module provides a set of functions to extract various features from text data, such as tweet messages or other short texts. It relies on several popular libraries for natural language processing and machine learning, such as NLTK, TextBlob, spaCy, and scikit-learn.
 
 #The following features can be extracted using this module:
-Readability metrics: this module uses the textstat library to compute various metrics of text complexity and readability, such as the Flesch-Kincaid Grade Level, the Automated Readability Index, and the Coleman-Liau Index.
+
+    Readability metrics: this module uses the textstat library to compute various metrics of text complexity and readability, such as the Flesch-Kincaid Grade Level, the Automated Readability Index, and the Coleman-Liau Index.
 
     - Text preprocessing: this module includes various functions to preprocess text data, such as removing URLs, mentions, hashtags, and retweet tags, as well as tokenizing and part-of-speech tagging the remaining words using the NLTK library.
 
