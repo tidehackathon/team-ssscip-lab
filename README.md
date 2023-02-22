@@ -77,6 +77,8 @@ The script uses several libraries, including datetime, requests, tweepy, time, t
 
 The main part of the script iterates through each tweet returned by the Twitter search, and extracts the text, screen name, and other relevant information from the tweet. It then calculates various metrics for the tweet, including sentiment score, complexity, informality, and more. Finally, it sends the analyzed data to an ElasticSearch server for storage.
 
+## Future Directions
+![Screen from Kibana](https://i.postimg.cc/NMyXsLcr/2023-02-22-16-37-35.jpg)
 ## Feedback
 
 We've put a lot of effort into making this application easy to use and understand, and we hope you find it helpful. If you have any questions or feedback, please don't hesitate to reach out to us!
