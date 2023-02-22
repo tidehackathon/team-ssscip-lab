@@ -71,16 +71,14 @@ We use **ElasticSearch** and **Kibana** for data storage and visualization, resp
 Our system includes a feature for aggregating tweets related to a particular topic or keyword. This allows us to provide our users with a real-time feed of relevant tweets.
 
 ### PYTHON API
-    This script uses the Tweepy library to search for tweets on Twitter based on a search query, and analyzes the sentiment, complexity, informality, and other attributes of each tweet. The script then sends the analyzed data to an ElasticSearch server for storage.
-    The script uses several libraries, including datetime, requests, tweepy, time, textstat, re, wordnet, nltk, textblob, cmudict, TfidfVectorizer, spacy, SentimentIntensityAnalyzer, pysafebrowsing, json, tensorflow, and tensorflow_text.
-    The main part of the script iterates through each tweet returned by the Twitter search, and extracts the text, screen name, and other relevant information from the tweet. It then calculates various metrics for the tweet, including sentiment score, complexity, informality, and more. Finally, it sends the analyzed data to an ElasticSearch server for storage.
+This script uses the Tweepy library to search for tweets on Twitter based on a search query, and analyzes the sentiment, complexity, informality, and other attributes of each tweet. The script then sends the analyzed data to an ElasticSearch server for storage.
+The script uses several libraries, including datetime, requests, tweepy, time, textstat, re, wordnet, nltk, textblob, cmudict, TfidfVectorizer, spacy, SentimentIntensityAnalyzer, pysafebrowsing, json, tensorflow, and tensorflow_text.
+The main part of the script iterates through each tweet returned by the Twitter search, and extracts the text, screen name, and other relevant information from the tweet. It then calculates various metrics for the tweet, including sentiment score, complexity, informality, and more. Finally, it sends the analyzed data to an ElasticSearch server for storage.
 
 ## Feedback
 
 We've put a lot of effort into making this application easy to use and understand, and we hope you find it helpful. If you have any questions or feedback, please don't hesitate to reach out to us!
 
 ---
-
-#### This is a footnote or a disclaimer
 
 ##### Install Python Api - [pythonapi.md]( pythonapi.md)
