@@ -59,9 +59,12 @@ Our system includes a feature for detecting fake news and information. This help
     
     - Imagery Score: A metric that measures the degree of vivid imagery in the text.
     
+![Screen from Kibana](https://i.ibb.co/TrdfKsD/arh.jpg)
+
 ### ElasticSearch and Kibana
 
 We use **ElasticSearch** and **Kibana** for data storage and visualization, respectively. ElasticSearch allows us to efficiently index and search through large amounts of data, while Kibana provides us with a user-friendly interface for exploring and analyzing our data.
+![Screen from Kibana](https://i.ibb.co/5xfRj4P/kibana.gif)
 
 ### Tweet aggregation
 
