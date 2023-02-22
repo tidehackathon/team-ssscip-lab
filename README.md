@@ -17,7 +17,7 @@ Our system includes a feature for detecting fake news and information. This help
 
 #This Python module provides a set of functions to extract various features from text data, such as tweet messages or other short texts. It relies on several popular libraries for natural language processing and machine learning, such as NLTK, TextBlob, spaCy, and scikit-learn.
 
-# The following features can be extracted using this module:
+#### The following features can be extracted using this module:
 
     - Readability metrics: this module uses the textstat library to compute various metrics of text complexity and readability, such as the Flesch-Kincaid Grade Level, the Automated Readability Index, and the Coleman-Liau Index.
 
@@ -34,7 +34,7 @@ Our system includes a feature for detecting fake news and information. This help
     - Named entities: this module uses the spaCy library to extract named entities from the text, such as persons, organizations, and locations.
 
 
-This is a text analysis engine built with Python that extracts various metrics from text. It uses a combination of natural language processing and machine learning techniques to extract the following metrics:
+#### This is a text analysis engine built with Python that extracts various metrics from text. It uses a combination of natural language processing and machine learning techniques to extract the following metrics:
 
     -Sentiment: A sentiment analysis score that indicates the overall emotional tone of the text.
 
@@ -58,6 +58,7 @@ This is a text analysis engine built with Python that extracts various metrics f
     - Activation Score: A metric that measures the degree of activation in the text.
     
     - Imagery Score: A metric that measures the degree of vivid imagery in the text.
+    
 ### ElasticSearch and Kibana
 
 We use **ElasticSearch** and **Kibana** for data storage and visualization, respectively. ElasticSearch allows us to efficiently index and search through large amounts of data, while Kibana provides us with a user-friendly interface for exploring and analyzing our data.
