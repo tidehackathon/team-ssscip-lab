@@ -7,7 +7,7 @@ Hello and welcome to our GitHub repository!
 ### Monitoring service
 
 We use a combination of **PHP** and **JavaScript** to create our monitoring service, which is responsible for keeping track of the health of our application. We also use **Chart.js** to display metrics in an easily understandable format.
-
+![Alt Text](https://i.ibb.co/NCc53MS/test2.gif)
 ### Fake detection
 
 Our system includes a feature for detecting fake news and information. This helps us ensure that our users are only receiving accurate information and helps combat the spread of misinformation.
