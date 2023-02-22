@@ -59,7 +59,7 @@ Our system includes a feature for detecting fake news and information. This help
     
     - Imagery Score: A metric that measures the degree of vivid imagery in the text.
     
-![Screen from Kibana](https://i.ibb.co/TrdfKsD/arh.jpg)
+![Screen from Kibana](https://i.postimg.cc/vDFkqR04/2023-02-22-16-28-15.jpg)
 
 ### ElasticSearch and Kibana
 
