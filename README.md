@@ -96,4 +96,4 @@ In nifi you must build Docker with nifi and requirements
 Then in root folder just run
 
     docker-compose up
-##### In order to bring up the web service(monitoring) you need to install php and change the requests to ElasticSearch to your address.
+##### In order to bring up the web service(monitoring) you need to install php and change the requests to ElasticSearch in backend files to your address.
