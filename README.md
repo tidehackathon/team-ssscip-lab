@@ -89,6 +89,9 @@ We've put a lot of effort into making this application easy to use and understan
 ---
 
 ##### Install Python Api - [pythonapi.md]( pythonapi.md)
-##### Install Kibana,ElasticSearch,Apache-Nifi,CoreNLP,Zookeeper
+##### Install Kibana,Elasticsearch,Apache-Nifi,CoreNLP,Zookeeper
+In nifi you must build Docker with nifi and requirements 
+    docker build -t nifi . 
+Then in root folder just run
     docker-compose up
 ##### In order to bring up the web service(monitoring) you need to install php and change the requests to ElasticSearch to your address.
