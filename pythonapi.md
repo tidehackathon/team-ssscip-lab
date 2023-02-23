@@ -20,12 +20,6 @@ Requests: pip install requests
    nltk.download('wordnet')
    nltk.download('vader_lexicon')
 ```
-## Download the BERT fake news detection model from this link:
-
-```
-https://drive.google.com/file/d/1hM9X6dqjtVL0aBBUQ2yU0myzA2h8NlWT/view?usp=sharing.
-```
-Extract the contents of the zip file to a folder named bert_fake_detector.
 
 ## Create a file named params.json and include the following content:
 ```
