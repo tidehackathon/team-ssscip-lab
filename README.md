@@ -96,3 +96,8 @@ Then in root folder just run
 
     docker-compose up
 ##### In order to bring up the web service(monitoring) you need to install php and change the requests to ElasticSearch in backend files to your address.
+---
+
+## Another link to Azure Blob
+Model file - https://sscip.blob.core.windows.net/files/classifier01.zip
+Apache Nifi Stanford CoreNLP Processor - https://sscip.blob.core.windows.net/files/nifi-stanfordcorenlp-nar-1.2.nar
