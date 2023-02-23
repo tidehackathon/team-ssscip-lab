@@ -1,13 +1,11 @@
 import tensorflow as tf
-import tensorflow_hub as hub
-import tensorflow_text as text
 from official.nlp import optimization  # to create AdamW optimizer
 
 import matplotlib.pyplot as plt
-from kaggle_dataset import dataset_dir
+from bert_classifier.kaggle_dataset import dataset_dir
 
 tf.get_logger().setLevel('ERROR')
-from bert import load_bert, build_classifier_model
+from bert_classifier.bert import load_bert, build_classifier_model
 
 def prepare_dataset():
     AUTOTUNE = tf.data.AUTOTUNE

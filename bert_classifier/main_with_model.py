@@ -21,8 +21,8 @@ import tensorflow_text as tf_text
 
 
 #####################################################################
-model = tf.saved_model.load("bert_fake_detector")                   #
-f = open('params.json')                                             #
+model = tf.saved_model.load("../bert_fake_detector")                   #
+f = open('../params.json')                                             #
 params=json.load(f)                                                 #
 es_url = params['es_url']                                           #
 index_name = params['index_name']                                   #

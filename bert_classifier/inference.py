@@ -3,7 +3,7 @@ import tensorflow as tf
 import tensorflow_text as tf_text
 from typing import Tuple, List
 threshold = 0.99999
-model = tf.saved_model.load("bert_fake_detector")
+model = tf.saved_model.load("../bert_fake_detector")
 
 
 def normalised_score(confidence):
