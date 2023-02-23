@@ -70,8 +70,7 @@ We use **ElasticSearch** and **Kibana** for data storage and visualization, resp
 ![Screen from Kibana](https://i.ibb.co/5xfRj4P/kibana.gif)
 
 
-### PYTHON API and Tweet aggregation
-Our system includes a feature for aggregating tweets related to a particular topic or keyword. This allows us to provide our users with a real-time feed of relevant tweets.
+### PYTHON API
 
 This script uses the Tweepy library to search for tweets on Twitter based on a search query, and analyzes the sentiment, complexity, informality, and other attributes of each tweet. The script then sends the analyzed data to an ElasticSearch server for storage.
 
