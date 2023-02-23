@@ -3,7 +3,7 @@
 Hello and welcome to our GitHub repository!
 
 ## Infrastructure
-
+![Screen from Kibana](https://i.postimg.cc/sx7qZ3Rn/2023-02-23-10-07-54.jpg)
 ### Monitoring service
 
 We use a combination of **PHP** and **JavaScript** to create our monitoring service, which is responsible for keeping track of the health of our application. We also use **Chart.js** to display metrics in an easily understandable format.
