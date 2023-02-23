@@ -88,8 +88,8 @@ We've put a lot of effort into making this application easy to use and understan
 ## Install product
 
 #### Install Python Api - [pythonapi.md]( pythonapi.md)
-#### Install Kibana,Elasticsearch,Apache-Nifi,CoreNLP,Zookeeper
-In nifi you must build Docker with nifi and requirements 
+#### Install Kibana, Elasticsearch, Apache-Nifi, CoreNLP, Zookeeper
+In nifi folder you must build Docker with nifi and requirements 
 
     docker build -t nifi . 
 Then in root folder just run
