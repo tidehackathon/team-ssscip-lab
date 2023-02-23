@@ -64,6 +64,14 @@ This Python module provides a set of functions to extract various features from 
     
 ![Screen from Kibana](https://i.postimg.cc/vDFkqR04/2023-02-22-16-28-15.jpg)
 
+### ML: BERT classifier
+
+We use Bidirectional Encoder Representations from Transformers (BERT) model to classify texts via fake/non-fake. 
+We finetune BERT on 
+- Fake News challenge dataset (https://www.kaggle.com/competitions/fake-news/data)
+- Fake and Real news dataset (https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
+- MC Fake - dataset of news and social context (https://github.com/qwerfdsaplking/MC-Fake)
+
 ### ElasticSearch and Kibana
 
 We use **ElasticSearch** and **Kibana** for data storage and visualization, respectively. ElasticSearch allows us to efficiently index and search through large amounts of data, while Kibana provides us with a user-friendly interface for exploring and analyzing our data.
