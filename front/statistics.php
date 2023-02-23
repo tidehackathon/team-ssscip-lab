@@ -17,17 +17,37 @@ $percent_negativ_rounded = number_format($percent_negativ_sentimant, 2);
 $percent_fc = ($false_content / $tweets_weekly) * 100;
 $percent_fc_rounded = number_format($percent_fc, 2);
 // Створити запит до ElasticSearch
-$query = [
-  "size" => 10000,
-  "aggs" => [
-      "top_users" => [
-          "terms" => [
-              "field" => "screen_name.keyword",
+$now = new DateTime();
+$today = $now->format('Y-m-d');
 
-          ]
-      ]
-  ]
+$query = [
+    "size" => 10000,
+    "query" => [
+        "bool" => [
+            "filter" => [
+                "range" => [
+                    "created_at" => [
+                        "gte" => $today . "T00:00:00",
+                        "lte" => $now->format('c')
+                    ]
+                ]
+            ],
+            "must" => [
+                "term" => [
+                    "score_fake_model_bool" => true
+                ]
+            ]
+        ]
+    ],
+    "aggs" => [
+        "top_users" => [
+            "terms" => [
+                "field" => "screen_name.keyword",
+            ]
+        ]
+    ]
 ];
+$queryJson = json_encode($query);
 $queryJson = json_encode($query);
 
 // Виконуємо запит до ElasticSearch
@@ -86,7 +106,7 @@ $firstUser1 = $topUsers[4];
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Sixl - stop fake today
+    Statistics
   </title>
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -133,12 +153,24 @@ $firstUser1 = $topUsers[4];
             </a>
           </li>
           <li>
-            <a href="http://10.0.201.201:5601/">
+            <a href="askme.php">
+            <i class="tim-icons icon-compass-05"></i>
+              <p>Ask me</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="http://10.0.201.201:5601/goto/0343fbef42dd8a5ad9d6f1aa9d072122">
               <i class="tim-icons icon-pin"></i>
               <p>Kibana</p>
             </a>
           </li>
-          
+          <li>
+            <a href="http://10.0.201.201:9000/">
+              <i class="tim-icons icon-paper"></i>
+              <p>Stanford CoreNLP</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -328,13 +360,13 @@ echo $percent_negativ_rounded.'%';
                           <i class="tim-icons icon-gift-2"></i>
                         </span>
                       </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="2">
+                      <!--<label class="btn btn-sm btn-primary btn-simple" id="2">
                         <input type="radio" class="d-none" name="options">
                         <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Sessions</span>
                         <span class="d-block d-sm-none">
                           <i class="tim-icons icon-tap-02"></i>
                         </span>
-                      </label>
+                      </label>-->
                     </div>
                   </div>
                 </div>
@@ -348,6 +380,7 @@ echo $percent_negativ_rounded.'%';
             </div>
           </div>
         </div>
+        
         <div class="row">
           <div style="display:none;" class="col-lg-4">
             <div class="card card-chart">
@@ -392,30 +425,31 @@ echo $percent_negativ_rounded.'%';
           <div class="col-md-5">
           <div class="card card-chart">
           <div class="card-header">
-                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i>Top 5 fake users</h3>
+          <h5 class="card-category">Users who post fake tweets</h5>
+                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i>Top 5 users today</h3>
               </div>
               <div class="card-body">
-            <h4 style="margin-top:9px;" class="small font-weight-bold"><?php echo $topUsers[0]['screen_name']; ?>  - <?php echo $topUsers[0]['count']; ?> post</h4>
+            <h4 style="margin-top:5px;" class="small font-weight-bold"><?php echo $topUsers[0]['screen_name']; ?>  - <?php echo $topUsers[0]['count']; ?> post</h4>
             <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $topUsers[0]['count']; ?>%"
                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="20"></div>
             </div>
-            <h4 style="margin-top:9px;" class="small font-weight-bold"><?php echo $topUsers[1]['screen_name']; ?>  - <?php echo $topUsers[1]['count']; ?> post </br></h4>
+            <h4 style="margin-top:5px;" class="small font-weight-bold"><?php echo $topUsers[1]['screen_name']; ?>  - <?php echo $topUsers[1]['count']; ?> post </br></h4>
             <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $topUsers[1]['count']; ?>%"
                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="20"></div>
             </div>
-            <h4 style="margin-top:8px;" class="small font-weight-bold"><?php echo $topUsers[2]['screen_name']; ?>  - <?php echo $topUsers[2]['count']; ?> post</h4>
+            <h4 style="margin-top:5px;" class="small font-weight-bold"><?php echo $topUsers[2]['screen_name']; ?>  - <?php echo $topUsers[2]['count']; ?> post</h4>
             <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $topUsers[2]['count']; ?>%"
                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="20"></div>
             </div>
-            <h4 style="margin-top:8px;" class="small font-weight-bold"><?php echo $topUsers[3]['screen_name']; ?>  - <?php echo $topUsers[3]['count']; ?> post</h4>
+            <h4 style="margin-top:5px;" class="small font-weight-bold"><?php echo $topUsers[3]['screen_name']; ?>  - <?php echo $topUsers[3]['count']; ?> post</h4>
             <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $topUsers[3]['count']; ?>%"
                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="20"></div>
             </div>
-            <h4 style="margin-top:8px;" class="small font-weight-bold"><?php echo $topUsers[4]['screen_name']; ?>  - <?php echo $topUsers[4]['count']; ?> post</h4>
+            <h4 style="margin-top:5px;" class="small font-weight-bold"><?php echo $topUsers[4]['screen_name']; ?>  - <?php echo $topUsers[4]['count']; ?> post</h4>
             <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $topUsers[4]['count']; ?>%"
                     aria-valuenow="5" aria-valuemin="0" aria-valuemax="5"></div>
