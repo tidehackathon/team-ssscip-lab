@@ -15,7 +15,7 @@ Our system includes a feature for detecting fake news and information. This help
 ### Extract Text Feature Engine
 
 
-#This Python module provides a set of functions to extract various features from text data, such as tweet messages or other short texts. It relies on several popular libraries for natural language processing and machine learning, such as NLTK, TextBlob, spaCy, and scikit-learn.
+This Python module provides a set of functions to extract various features from text data, such as tweet messages or other short texts. It relies on several popular libraries for natural language processing and machine learning, such as NLTK, TextBlob, spaCy, and scikit-learn.
 
 #### The following features can be extracted using this module:
 
