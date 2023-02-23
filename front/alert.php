@@ -62,12 +62,24 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true) {
             </a>
           </li>
           <li>
-            <a href="http://10.0.201.201:5601/">
+            <a href="askme.php">
+            <i class="tim-icons icon-compass-05"></i>
+              <p>Ask me</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="http://10.0.201.201:5601/goto/0343fbef42dd8a5ad9d6f1aa9d072122">
               <i class="tim-icons icon-pin"></i>
               <p>Kibana</p>
             </a>
           </li>
-          
+          <li>
+            <a href="http://10.0.201.201:5601/goto/0343fbef42dd8a5ad9d6f1aa9d072122">
+              <i class="tim-icons icon-paper"></i>
+              <p>Stanford CoreNLP</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -172,12 +184,14 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true) {
 								"<td>" + tweet.user_followers + "</td>" +
 								"<td>" + tweet.user_following + "</td>" +
 								"<td>" + tweet.sentiment + "</td>" +
+                "<td><p class='btn btn-danger btn-sm'>Fake</p></td>" +
+
 							"</tr>";
 			});
 			document.getElementById("tweets").innerHTML = tableRows;
 		}
 	};
-	xhr.open('GET', '../back/gettweets.php', true);
+	xhr.open('GET', '../back/getfaketweets.php', true);
 	xhr.send();
 }
 
@@ -186,20 +200,21 @@ setInterval(loadTweets, 1000);
 	</script>
 </head>
 <body>
-  		<tr>
+  		<tr style="text-align: center;
+">
 			<th>Name</th>
 			<th>Tweet</th>
 			<th>Retweet</th>
 			<th>Foolowers</th>
 			<th>Following</th>
 			<th>Sentiment</th>
+      <th>Information</th>
 		</tr>
 	</thead>
 	<tbody id="tweets">
 	</tbody>
 </table>
-                    </tbody>
-                  </table>
+                 
                 </div>
               </div>
             </div>
@@ -343,6 +358,13 @@ setInterval(loadTweets, 1000);
     });
   </script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "black-dashboard-free"
+      });
+  </script>
 </body>
 
 </html>
