@@ -2,15 +2,18 @@
 
 Hello and welcome to our GitHub repository!
 
+In the midst of a full-scale war, society has become increasingly reliant on digital media and social networks. As a result, the threat of fake news and disinformation has become more widespread than ever before. To combat this issue, we have developed a comprehensive system that can detect and flag false information from Twitter, as well as a monitoring system that allows users to define topics of interest within their personal accounts. Additionally, our system can aggregate tweets and extract text features, all while providing a reliable notification system.
+
+By proactively identifying and addressing fake news, our product can play an essential role in protecting the integrity of online information .
+
 ## Infrastructure
 ![Screen from Kibana](https://i.postimg.cc/sx7qZ3Rn/2023-02-23-10-07-54.jpg)
-### Monitoring service
+### Monitoring service and Fake detection
 
-We use a combination of **PHP** and **JavaScript** to create our monitoring service, which is responsible for keeping track of the health of our application. We also use **Chart.js** to display metrics in an easily understandable format.
+We use a combination of **PHP** and **JavaScript** to create our monitoring service, which is responsible for keeping track of the health of our application. We also use **Chart.js** to display metrics in an easily understandable format.Our product offers an exceptional solution for monitoring any topic of your choosing. 
+
 ![Alt Text](https://i.ibb.co/5GZnW8v/monitoring.gif)
-### Fake detection
 
-Our system includes a feature for detecting fake news and information. This helps us ensure that our users are only receiving accurate information and helps combat the spread of misinformation.
 
 ### Extract Text Feature Engine
 
