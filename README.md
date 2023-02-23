@@ -79,6 +79,12 @@ The script uses several libraries, including datetime, requests, tweepy, time, t
 The main part of the script iterates through each tweet returned by the Twitter search, and extracts the text, screen name, and other relevant information from the tweet. It then calculates various metrics for the tweet, including sentiment score, complexity, informality, and more. Finally, it sends the analyzed data to an ElasticSearch server for storage.
 
 ## Future Directions
+
+* To ensure scalability, we plan to migrate to a Kubernetes Cluster.
+* To handle a large number of requests from different users, we plan to add Apache Kafka to our architecture.
+* We plan to further integrate with Stanford CoreNLP to identify Person and Location in text for better disinformation targeting.
+* We will create a tool for data labeling and creating / augmenting the dataset for the BERT classifier.
+
 ![Screen from Kibana](https://i.postimg.cc/NMyXsLcr/2023-02-22-16-37-35.jpg)
 ## Feedback
 
