@@ -4,18 +4,15 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true) {
     header("Location: ../index.php");
     exit;
 } 
-$tweets_weekly=file_get_contents('http://10.0.201.200/back/gettwetsweekly.php');  // all tweets
+$tweets_alltime=file_get_contents('http://10.0.201.200/back/gettwetsweekly.php');  // all tweets
 $tweets_per_day=file_get_contents('http://10.0.201.200/back/gettweetsday.php');  // tweets per day
 $false_content=file_get_contents('http://10.0.201.200/back/getfalsecontentalltime.php'); //alltimefalse contect
 $negativ_sentimant=file_get_contents('http://10.0.201.200/back/getneutrallalltime.php?sentiment=negative');  //negative all time
 $positive_sentimant= file_get_contents('http://10.0.201.200/back/getneutrallalltime.php?sentiment=positive'); //positive all time
 $neutral_sentimant=  file_get_contents('http://10.0.201.200/back/getneutrallalltime.php?sentiment=neutral'); //neutrall all time
-$percent_neutral_sentimant = ($neutral_sentimant / $tweets_weekly) * 100; 
-$percent_netral_rounded = number_format($percent_neutral_sentimant, 2);
-$percent_negativ_sentimant = ($negativ_sentimant / $tweets_weekly) * 100;
-$percent_negativ_rounded = number_format($percent_negativ_sentimant, 2);
-$percent_fc = ($false_content / $tweets_weekly) * 100; 
-$percent_fc_rounded = number_format($percent_fc, 2);
+$fake_tweets_per_day=  file_get_contents('http://10.0.201.200/back/gettweetsdayfake.php'); //neutrall all time
+$fake_tweets_per_alltime=  file_get_contents('http://10.0.201.200/back/gettweetsalltimefake.php'); //neutrall all time
+
 // Створити запит до ElasticSearch
 $query = [
     "size" => 0,
@@ -66,7 +63,7 @@ $firstUser1 = $topUsers[1];
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Black Dashboard by Creative Tim
+   Dashboard
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -114,12 +111,24 @@ $firstUser1 = $topUsers[1];
             </a>
           </li>
           <li>
-            <a href="http://10.0.201.201:5601/">
+            <a href="askme.php">
+            <i class="tim-icons icon-compass-05"></i>
+              <p>Ask me</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="http://10.0.201.201:5601/goto/0343fbef42dd8a5ad9d6f1aa9d072122">
               <i class="tim-icons icon-pin"></i>
               <p>Kibana</p>
             </a>
           </li>
-          
+          <li>
+            <a href="http://10.0.201.201:9000/">
+              <i class="tim-icons icon-paper"></i>
+              <p>Stanford CoreNLP</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -229,7 +238,7 @@ form.addEventListener('submit', function(event) {
   var xhr = new XMLHttpRequest();
   
   // Встановлюємо метод та адресу запиту
-  xhr.open('POST', 'addtopic.php');
+  xhr.open('POST', '../back/addtopic.php');
   
   // Встановлюємо заголовки запиту, якщо потрібно
   
@@ -241,11 +250,11 @@ form.addEventListener('submit', function(event) {
     else {
       // Відображаємо повідомлення про помилку
       var errorMessage = document.createElement('p');
-      errorMessage.textContent = 'Сталася помилка під час додавання запиту до моніторингу. Будь ласка, спробуйте ще раз.';
+      errorMessage.textContent = 'Something wrong,repeat pls.';
       form.parentNode.insertBefore(errorMessage, form.nextSibling);
     }
     
-    // Очищаємо значення інпуту
+    // Очищаємо значення інпутуs
     input.value = '';
   };
   
@@ -303,7 +312,7 @@ setInterval(updateTopicsList, 1000);
 				<div class="col mr-2">
         <h4 class="card-title">Tweets summary:</h4>
 					<div class="h5 mb-0 font-weight-bold text-gray-800">
-					<span id="count"><?php echo $tweets_weekly; ?></span></div>
+					<span id="count"><?php echo $tweets_alltime; ?></span></div>
 				</div>
 				<div class="col-auto">
 					<i style="font-size:3.333333em;" class="fa fa-comment fa-lg"></i>
@@ -355,6 +364,49 @@ setInterval(updateTopicsList, 1000);
 	</div>
 </div>
 </div>
+
+<div class="row">
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="col-xl-6 col-md-6 mb-4">
+	<div style="width: 100%;height: 125px!important;" class="card border-left-primary shadow h-100 py-2">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+        <h4 class="card-title">Fake tweets summary:</h4>
+					<div class="h5 mb-0 font-weight-bold text-gray-800">
+					<span id="count"><?php echo $fake_tweets_per_alltime; ?></span></div>
+				</div>
+				<div class="col-auto">
+					<i style="font-size:3.333333em;" class="fa fa-comment fa-lg"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="col-xl-6 col-md-6 mb-4">
+	<div style="width: 100%;height: 125px!important;" class="card border-left-success shadow h-100 py-2">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+        <h4 class="card-title">
+					Fake weets per day:</h4>
+					<div class="h5 mb-0 font-weight-bold text-gray-800">
+					<span id="count_day"><?php echo $fake_tweets_per_day;?></span>
+	
+					</div>
+				</div>
+				<div class="col-auto">
+				<i style="font-size:3.333333em;" class="fa fa-tag"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
 <div class="row">
 
 <div class="col-xl-4 col-md-6 mb-4">
